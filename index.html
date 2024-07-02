@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text changer</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .heading{
+            text-align: center;
+            font-size: 60px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .text{
+            width: 80%;
+            display: block;
+            margin: 20px auto;
+            padding: 30px;
+            height: 100px;
+            border-radius: 10px;
+        }
+        .text:hover{
+            width: 81%;
+            height: 101px;
+            box-shadow: 1px;
+        }
+        .result{
+            width: 70%;
+            display: block;
+            margin: 20px auto;
+            height: 100px;
+        }
+        .button{
+            display: flex;
+            justify-content: space-around;
+        }
+        .action{
+            height: 30px;
+            width: 160px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .footer{
+            text-align: center;
+            margin-top: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Text Changer</h1>
+    <input type="text" class="text" id="text"/>
+    <p class="result" id="result"></p>
+    <div class="button">
+        <button class="action" onclick="uppercase()">UPPERCASE</button>
+        <button class="action" onclick="lowercase()">lowercase</button>
+        <button class="action" onclick="charcount()">Character-count</button>
+        <button class="action" onclick="wordcount()">Word-count</button>
+    </div>
+    <div class="footer">Have A Nice Day!!!</div>
+    <script>
+        
+        function uppercase(){
+            const inputElement = document.getElementById("text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = inputElement.value.toUpperCase()
+        }
+        function lowercase(){
+            const inputElement = document.getElementById("text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = inputElement.value.toLowerCase()
+        }
+        function charcount(){
+            const inputElement = document.getElementById("text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText =inputElement.value.length
+        }
+        function wordcount(){
+            const inputElement = document.getElementById("text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = inputElement.value.split(' ').length
+        }
+    </script>
+</body>
+</html>
